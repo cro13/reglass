@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- The app's entitlements with REGLASS_ICLOUD = YES (Config.xcconfig, docs/ICLOUD.md): ReGlass.entitlements
+	     plus iCloud. Keep the two in step. -->
+	<!-- Reminders break through Focus as time-sensitive notifications (Connectors/ReGlassReminders/ReminderScheduler.swift). -->
+	<key>com.apple.developer.usernotifications.time-sensitive</key>
+	<true/>
+	<!-- Notes, reminders and lists sync through the owner's private database in this container (Store/LibraryStore.swift). -->
+	<key>com.apple.developer.icloud-container-identifiers</key>
+	<array>
+		<string>iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	</array>
+	<key>com.apple.developer.icloud-services</key>
+	<array>
+		<string>CloudKit</string>
+	</array>
+	<!-- CloudKit's silent pushes about changes from other devices. Xcode signs distribution builds with production. -->
+	<key>aps-environment</key>
+	<string>development</string>
+</dict>
+</plist>

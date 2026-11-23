@@ -1,0 +1,101 @@
+# XcodeGen spec for ReGlass, a companion app for the Ray-Ban Meta glasses.
+# Regenerate the project after changing this file:
+#   xcodegen generate
+# The generated ReGlass.xcodeproj is committed, so building needs only Xcode 27 or newer (iOS 27 SDK).
+#
+# Team and bundle ID live in Config.xcconfig, with personal overrides in the git-ignored Local.xcconfig; the Meta
+# client tokens in the git-ignored Secrets.xcconfig. Both are optional (see the .example files).
+
+name: ReGlass
+
+options:
+  deploymentTarget:
+    iOS: "27.0"
+  # Off: with it on, XcodeGen gives Config.xcconfig's group a random id on every run.
+  createIntermediateGroups: false
+
+packages:
+  # ReGlass's own engine for the glasses (Bluetooth, encrypted link, Meta sign-in, ownership, status).
+  ReGlassKit:
+    path: ReGlassKit
+  # The assistant's brain and voice (Claude, ElevenLabs and Apple voices, speech-to-text, Keychain keys). No
+  # ReGlassKit dependency: the app connects the two.
+  ReGlassAssistant:
+    path: ReGlassAssistant
+
+targets:
+  ReGlass:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug: Config.xcconfig
+      Release: Config.xcconfig
+    sources:
+      - path: ReGlass
+        excludes:
+          - Info.plist
+          - "*.entitlements"
+    settings:
+      base:
+        PRODUCT_NAME: ReGlass
+        # CODE_SIGN_ENTITLEMENTS comes from Config.xcconfig: ReGlass.entitlements, or ReGlass-iCloud.entitlements
+        # with REGLASS_ICLOUD = YES.
+        INFOPLIST_FILE: ReGlass/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    dependencies:
+      - package: ReGlassKit
+        product: ReGlassKit
+      - package: ReGlassAssistant
+        product: ReGlassAssistant
+      # The widget extension, embedded in the app's PlugIns: the alarms' Live Activity (snooze countdown).
+      - target: ReGlassWidgets
+
+  # ReGlass's WidgetKit extension: the Live Activity AlarmKit shows for the app's alarms. Shares one file with the app
+  # (ReGlassAlarmMetadata.swift: the alarm's attributes type and the Stop intent); both targets must compile it.
+  # Bundle ID: the app's ID + ".widgets", same team (Config.xcconfig).
+  ReGlassWidgets:
+    type: app-extension
+    platform: iOS
+    configFiles:
+      Debug: Config.xcconfig
+      Release: Config.xcconfig
+    sources:
+      - path: ReGlassWidgets
+        excludes:
+          - Info.plist
+      - path: ReGlass/Connectors/Alarms/ReGlassAlarmMetadata.swift
+    settings:
+      base:
+        PRODUCT_NAME: ReGlassWidgets
+        PRODUCT_BUNDLE_IDENTIFIER: $(inherited).widgets
+        INFOPLIST_FILE: ReGlassWidgets/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
+
+schemes:
+  ReGlass:
+    build:
+      targets:
+        ReGlass: all
+    run:
+      config: Debug
+    archive:
+      config: Release

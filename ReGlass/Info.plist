@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>ReGlass</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ReGlass</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAlarmKitUsageDescription</key>
+	<string>ReGlass sets alarms when you ask by voice.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>ReGlass plays and controls music in Apple Music when you ask through your glasses.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>ReGlass connects to your Meta glasses over Bluetooth to set them up and show their battery and status.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>ReGlass tells you what's on your calendar and adds events when you ask through your glasses.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>ReGlass uses your location for local weather when you ask through your glasses, also while your iPhone is locked in your pocket.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>ReGlass uses your location for local weather when you ask through your glasses.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>In the interpreter's Real time mode, ReGlass listens with your iPhone's microphone so it can translate the conversation while it talks.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>ReGlass turns what you say to your glasses into text on this iPhone, so the assistant can answer.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>InterDisplay-SemiBold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>bluetooth-central</string>
+		<!-- CloudKit's silent pushes, used only in builds with REGLASS_ICLOUD = YES (the app registers for them only then). -->
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>ReGlassMetaArToken</key>
+	<string>$(REGLASS_META_AR_TOKEN)</string>
+	<key>ReGlassMetaFrlToken</key>
+	<string>$(REGLASS_META_FRL_TOKEN)</string>
+	<key>ReGlassMetaHwToken</key>
+	<string>$(REGLASS_META_HW_TOKEN)</string>
+</dict>
+</plist>

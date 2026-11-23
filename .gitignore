@@ -1,0 +1,26 @@
+# Personal settings and Meta client tokens (see the .example files).
+Local.xcconfig
+Secrets.xcconfig
+/ReGlassKit/Sources/ReGlassKit/Resources/Generated/bloks-functions.txt
+bloks-functions.txt
+
+# Build output and caches.
+.builds/
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.DS_Store
+
+# Python bytecode.
+*.pyc
+__pycache__/
+
+# Local Android app bundles, firmware and diagnostic logs.
+*.apk
+*.apkm
+*.xapk
+*.apks
+firmware-*.bin
+events.log

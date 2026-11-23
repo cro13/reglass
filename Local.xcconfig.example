@@ -1,0 +1,7 @@
+// Copy to Local.xcconfig (same folder) for your own signing settings. Git-ignored; overrides Config.xcconfig.
+DEVELOPMENT_TEAM = ABCDE12345
+PRODUCT_BUNDLE_IDENTIFIER = com.yourname.reglass
+
+// Sync notes, reminders and lists through your private iCloud database (paid Apple Developer account only; see
+// docs/ICLOUD.md). Off when left out.
+// REGLASS_ICLOUD = YES

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- The app's entitlements (Config.xcconfig picks this file). ReGlass-iCloud.entitlements repeats them with iCloud
+	     added, for REGLASS_ICLOUD = YES: change both. -->
+	<!-- Reminders break through Focus as time-sensitive notifications (Connectors/ReGlassReminders/ReminderScheduler.swift). -->
+	<key>com.apple.developer.usernotifications.time-sensitive</key>
+	<true/>
+</dict>
+</plist>

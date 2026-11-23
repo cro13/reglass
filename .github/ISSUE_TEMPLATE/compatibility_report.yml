@@ -1,0 +1,76 @@
+name: Compatibility report
+description: Share what worked on your glasses and firmware.
+title: 'Compatibility: '
+body:
+  - type: input
+    id: glasses-model
+    attributes:
+      label: Glasses model
+      description: Give the retail model name and the variant, if you know it.
+      placeholder: Ray-Ban Meta Wayfarer with camera
+    validations:
+      required: true
+  - type: input
+    id: glasses-model-code
+    attributes:
+      label: Glasses model code
+      description: See Settings → Developer → Model code. Enter Unknown if you can't check.
+    validations:
+      required: true
+  - type: input
+    id: glasses-firmware
+    attributes:
+      label: Glasses firmware
+      description: See Settings → About these glasses → Firmware. Enter Unknown if you can't check.
+    validations:
+      required: true
+  - type: input
+    id: iphone-model
+    attributes:
+      label: iPhone model
+    validations:
+      required: true
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+    validations:
+      required: true
+  - type: input
+    id: reglass-build
+    attributes:
+      label: ReGlass version or commit
+      description: Give the version at the bottom of Settings or the commit you built.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: What you tried
+      description: Mark each area as Works, Doesn't work or Not tried. Add any details that help explain the result.
+      value: |
+        | Area | Result | Notes |
+        | --- | --- | --- |
+        | Setup and ownership | | |
+        | Reconnecting | | |
+        | Status (battery, case, worn) | | |
+        | "Hey Meta" and touch and hold | | |
+        | Replies in the glasses | | |
+        | Timers on the glasses | | |
+        | Interpreter | | |
+    validations:
+      required: true
+  - type: textarea
+    id: log-lines
+    attributes:
+      label: Log lines
+      description: If something failed, paste the relevant lines from Activity log. In Settings → Developer, tap Version five times to show it.
+      render: text
+  - type: checkboxes
+    id: redaction
+    attributes:
+      label: Before posting
+      description: Review what you're sharing and remove Meta account details and other personal data from the report and logs.
+      options:
+        - label: I removed keys, tokens, serial numbers and personal data
+          required: true

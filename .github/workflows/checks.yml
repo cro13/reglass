@@ -1,0 +1,42 @@
+name: Checks
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: macos-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Check for tracked local files
+        shell: bash
+        run: |
+          tracked_files=$(git ls-files -- \
+            ':(glob)**/Secrets.xcconfig' \
+            ':(glob)**/Local.xcconfig' \
+            ':(glob)**/bloks-functions.txt' \
+            ':(glob)**/*.apk' \
+            ':(glob)**/*.apkm' \
+            ':(glob)**/*.xapk' \
+            ':(glob)**/*.apks' \
+            ':(glob)**/firmware-*.bin' \
+            ':(glob)**/events.log')
+          if [[ -n "$tracked_files" ]]; then
+            printf 'Remove these files from Git tracking:\n%s\n' "$tracked_files"
+            exit 1
+          fi
+
+      - name: Test assistant addressing
+        run: python3 tools/assistant/test_addressing.py
+
+      - name: Test factory wake word download
+        run: python3 tools/factory-wake-word/test_factory_download.py
+
+      - name: Test the Meta client token and sign-in data helper
+        run: python3 tools/meta-tokens/test_extract_meta_tokens.py

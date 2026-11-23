@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a problem with ReGlass.
+body:
+  - type: input
+    id: glasses-model
+    attributes:
+      label: Glasses model
+      description: Give the retail model name. Enter None if you tested without glasses.
+    validations:
+      required: true
+  - type: input
+    id: glasses-firmware
+    attributes:
+      label: Glasses firmware
+      description: See Settings → About these glasses. Enter Unknown if you can't check, or None if you tested without glasses.
+    validations:
+      required: true
+  - type: input
+    id: iphone-model
+    attributes:
+      label: iPhone model
+    validations:
+      required: true
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+    validations:
+      required: true
+  - type: input
+    id: reglass-commit
+    attributes:
+      label: ReGlass commit
+      description: Run `git rev-parse --short HEAD` in the checkout you built.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do before the problem happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: Expected and actual behaviour
+      description: What did you expect to happen? What happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: log-lines
+    attributes:
+      label: Log lines
+      description: If available, paste the relevant lines from Activity log. In Settings → Developer, tap Version five times to show it.
+      render: text
+  - type: checkboxes
+    id: redaction
+    attributes:
+      label: Before posting
+      description: >-
+        Review your text, logs and attachments. Remove Meta client tokens (HW|, AR|, FRL|) and Secrets.xcconfig, Claude and
+        ElevenLabs keys, Meta account emails and sign-in codes, serial numbers and other device identifiers,
+        personal content such as speech, notes, names and places, and recordings made without consent.
+      options:
+        - label: I removed keys, tokens, serial numbers and personal data
+          required: true

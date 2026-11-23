@@ -1,0 +1,35 @@
+// Build settings for ReGlass and its widget extension (project.yml points both targets here).
+//
+// To build for your own iPhone, copy Local.xcconfig.example to Local.xcconfig and set your team and a bundle ID of
+// your own there; it is git-ignored. The widget extension's bundle ID is this one + ".widgets".
+//
+// Meta's client tokens go in Secrets.xcconfig (git-ignored; template in Secrets.xcconfig.example). Without them the
+// app builds and runs, but setup can't sign in with Meta.
+
+DEVELOPMENT_TEAM =
+PRODUCT_BUNDLE_IDENTIFIER = com.example.reglass
+
+REGLASS_META_HW_TOKEN =
+REGLASS_META_AR_TOKEN =
+REGLASS_META_FRL_TOKEN =
+
+// iCloud sync of notes, reminders and lists (docs/ICLOUD.md). Off: everything stays on the iPhone. Set
+// REGLASS_ICLOUD = YES in Local.xcconfig to sync them through your private iCloud database; that needs a paid Apple
+// Developer account. Write exactly YES or NO: any other value leaves the app with no entitlements at all. YES picks
+// the entitlements with iCloud and push (below) and compiles with the REGLASS_ICLOUD condition (the library's
+// CloudKit database, registering for CloudKit's silent pushes). Info.plist always lists the remote-notification
+// background mode; only an iCloud build registers for the pushes. Chats never sync.
+REGLASS_ICLOUD = NO
+
+// The app's entitlements, by target and by REGLASS_ICLOUD. The widget extension has none.
+CODE_SIGN_ENTITLEMENTS = $(REGLASS_ENTITLEMENTS_$(TARGET_NAME)_$(REGLASS_ICLOUD))
+REGLASS_ENTITLEMENTS_ReGlass_NO = ReGlass/ReGlass.entitlements
+REGLASS_ENTITLEMENTS_ReGlass_YES = ReGlass/ReGlass-iCloud.entitlements
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) $(REGLASS_SWIFT_CONDITIONS_$(REGLASS_ICLOUD))
+REGLASS_SWIFT_CONDITIONS_NO =
+REGLASS_SWIFT_CONDITIONS_YES = REGLASS_ICLOUD
+
+
+#include? "Local.xcconfig"
+#include? "Secrets.xcconfig"
