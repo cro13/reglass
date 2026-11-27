@@ -49,7 +49,8 @@ back any time.
 Things to buy or do, with no time. ReGlass puts each one on the right list, such as Shopping or To-do, as tick-off
 items in its Reminders tab.
 
-- **Needs:** nothing. The lists are ReGlass's own. This version doesn't read or change Apple Reminders.
+- **Needs:** nothing. The lists are ReGlass's own. To use lists in the Reminders app, switch on
+  [Apple Reminders](#apple-reminders).
 - **Say:** "I need to buy milk, coffee and Coke", "What's on my shopping list?", "I bought the milk", "Clear the
   shopping list".
 - **Tools:** `add_to_list`, `read_list`, `tick_off_list_item`, `get_lists`.
@@ -77,6 +78,20 @@ say yes.
 - **Options:** which calendars ReGlass reads (all by default), and where new events go.
 - **Say:** "What's on my calendar today?", "Am I free tomorrow afternoon?", "Add lunch with Alex on Thursday at one".
 - **Tools:** `list_events`, `find_free_time`, `add_event`.
+
+### Apple Reminders
+
+The Reminders app on your iPhone, synced through iCloud to your other Apple devices. While it's on, ReGlass keeps your
+reminders, to-dos and lists there instead of in its own Reminders tab. Off by default.
+
+- **Needs:** full access to Reminders. Works with the iPhone locked, once it has been unlocked since a restart.
+- **Say:** "Remind me tomorrow at nine to call the bank", "Add milk and eggs to my Groceries list", "What's on my
+  list in Reminders?", "I bought the milk".
+- **Tools:** `add_apple_reminders`, `list_apple_reminders`, `complete_apple_reminder`, `get_apple_reminder_lists`.
+- A reminder with a time alerts on the iPhone and your other Apple devices, but isn't said on the glasses. Say "on
+  my glasses" or "in ReGlass" to use ReGlass's own Reminders instead, or switch that connector off to use Apple
+  Reminders only.
+- Nothing is copied between ReGlass's lists and Apple Reminders. Lists shared with you read-only can't be changed.
 
 ### Alarms
 

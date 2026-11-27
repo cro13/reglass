@@ -45,6 +45,7 @@ Use the permission button when one appears. [Connector permissions and examples]
 | **Lists** | Add, read and tick off items in ReGlass lists. |
 | **Notes** | Save, find and add to notes. Move items between categories and restore deleted notes, reminders or list items by voice. |
 | **Calendar** | Read events, find free time and add an event after you confirm. |
+| **Apple Reminders** | Off by default. Keep reminders, to-dos and lists in the iPhone's Reminders app instead of ReGlass. |
 | **Alarms** | Set, check, cancel and snooze iPhone alarms. |
 | **Apple Music** | Start or control playback and ask what's playing. Full catalogue search needs MusicKit and an Apple Music subscription. |
 | **Weather** | Get local forecasts or ask about a named place. Set a home city in the connector's options if you prefer. |

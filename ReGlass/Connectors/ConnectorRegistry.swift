@@ -36,6 +36,7 @@ final class ConnectorRegistry: ObservableObject {
         all.append(NotesConnector())
         all.append(RemindersConnector())
         all.append(CalendarConnector())
+        all.append(AppleRemindersConnector())
         all.append(AlarmsConnector())
         all.append(MusicConnector())
         all.append(WeatherConnector())

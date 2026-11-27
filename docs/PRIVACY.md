@@ -105,8 +105,8 @@ ElevenLabs offers zero retention only on enterprise plans, so ReGlass doesn't as
 - **iCloud.** Only in a build with `REGLASS_ICLOUD = YES`: notes, reminders, list items and Recently Deleted sync
   through your private iCloud database, and the iPhone registers for CloudKit's change notifications. Chats, keys,
   settings and the log never sync. See [ICLOUD.md](ICLOUD.md).
-- **Calendars, alarms and notifications** use Apple's frameworks on the iPhone. If your calendars sync with an
-  account, such as iCloud or Google, iOS does that, not ReGlass.
+- **Calendars, Apple Reminders, alarms and notifications** use Apple's frameworks on the iPhone. If your calendars or
+  reminders sync with an account, such as iCloud or Google, iOS does that, not ReGlass.
 
 ## Open-Meteo
 

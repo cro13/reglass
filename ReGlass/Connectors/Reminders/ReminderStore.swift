@@ -45,8 +45,8 @@ struct ReminderListsSnapshot: Sendable, Equatable {
 /// ReGlass's door to Apple Reminders. One `EKEventStore`, used only from this actor (it isn't `Sendable`). Every call
 /// re-reads the lists, so changes made in the Reminders app, on another device or by Siri are always seen.
 ///
-/// Unused for now: the Lists connector's tools act on ReGlass's own lists (Connectors/Lists/), and nothing is
-/// imported. Kept, with `ReminderMatching.swift`, for a later link of a category to an Apple Reminders list.
+/// Used by the Apple Reminders connector (Connectors/AppleReminders/), which is off by default. The Lists connector's
+/// tools act on ReGlass's own lists (Connectors/Lists/), and nothing is imported between the two.
 ///
 /// Reminders data is "protected until first unlock": this works with the iPhone locked in a pocket, but not after a
 /// restart until it has been unlocked once.
@@ -107,7 +107,7 @@ actor ReminderStore {
         switch Self.access {
         case .notAsked:
             log("Reminders: \(what) refused, access not allowed yet")
-            return .closed(.failure("ReGlass doesn't have access to Reminders yet. The owner can allow it once in the ReGlass app on their iPhone: Settings, Connectors, Reminders, Allow access."))
+            return .closed(.failure("ReGlass doesn't have access to Reminders yet. The owner can allow it once in the ReGlass app on their iPhone: Settings, Connectors, Apple Reminders, Allow Access."))
         case .denied:
             log("Reminders: \(what) refused, access turned off")
             return .closed(.failure("Reminders access is turned off for ReGlass. The owner can turn it on in the iPhone's Settings app, under ReGlass."))

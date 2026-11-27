@@ -2,6 +2,13 @@
 
 This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Added
+
+- An Apple Reminders connector, off by default. While it's on, ReGlass adds, reads and ticks off reminders, to-dos
+  and lists in the iPhone's Reminders app instead of its own.
+
 ## [0.1.0] - 2026-11-23
 
 ### Added
