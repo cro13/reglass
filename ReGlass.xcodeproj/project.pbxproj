@@ -37,6 +37,7 @@
 		38C93E57DD8655BEC0FAA6F7 /* MusicConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C22F8A6E4D56E0DA7C2784 /* MusicConnector.swift */; };
 		39FE198BFB02558FAB6E8DEE /* RemindersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803EB91223DA53033020EC2 /* RemindersPage.swift */; };
 		3A74904B2A1E222CA9C9DD1D /* LibraryToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E2A966D8869F2AEC5CEBD /* LibraryToast.swift */; };
+		3A91445AA8E7D3A86420E38A /* AppleRemindersConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7675B258ADECB248ABA44E3 /* AppleRemindersConnector.swift */; };
 		3B28DA2E801EBE3DCF5E37A3 /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8F84EB721CF8BB20B6795 /* AppLifecycle.swift */; };
 		3C21A9B6FBFC6BBA5B01D7A6 /* ReGlassReminderTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1C4D2F749000BE7D5D913 /* ReGlassReminderTools.swift */; };
 		3D8B10A4EE2DE46719A41077 /* SnoozeReminderTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91452F7F337E95E3A4ADDC /* SnoozeReminderTool.swift */; };
@@ -116,6 +117,7 @@
 		CDC22146454DF061BEF0E51A /* CalendarTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25617682DD1A63E32F3CB8 /* CalendarTools.swift */; };
 		D184F40EE03C4040AF049DBA /* LibraryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFF241EA0A1EF282DBB649 /* LibraryHome.swift */; };
 		D28AFC4563D00F9A1A59B78A /* LibraryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D6DD0D37C5D74D4F99AF7F /* LibraryComponents.swift */; };
+		D792D20FBFC83E9A9107C450 /* AppleRemindersTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC48FC58E0E9E2DA12ABB5 /* AppleRemindersTools.swift */; };
 		D8E28E0775D6A12BF581B261 /* ReGlassWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B1F93A928A4B6E37703D5A70 /* ReGlassWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D965D63D8CCE57E82ABA4640 /* TimerSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B1093567E09463182C96F /* TimerSpeech.swift */; };
 		D9DDB68C2B4DC1DBA1E4816B /* ConnectorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF8CD5329F5E4BAAF85C7E /* ConnectorDetailView.swift */; };
@@ -223,6 +225,7 @@
 		63B8146B5B639C82EC27D1CE /* SpeechSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSettings.swift; sourceTree = "<group>"; };
 		6D4EF190332A6ADFB7181BB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		711E99D04DC8248420D330D7 /* NotesConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesConnector.swift; sourceTree = "<group>"; };
+		75AC48FC58E0E9E2DA12ABB5 /* AppleRemindersTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRemindersTools.swift; sourceTree = "<group>"; };
 		793EC7263969CC488F264FC7 /* BargeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BargeIn.swift; sourceTree = "<group>"; };
 		799976B1EE27612B698D5646 /* TimersConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersConnector.swift; sourceTree = "<group>"; };
 		7B752FDA90C5661050F50ED5 /* AssistantComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantComponents.swift; sourceTree = "<group>"; };
@@ -274,6 +277,7 @@
 		C2AF2FE6288F4CD242573DA3 /* ReGlass.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReGlass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DFF241EA0A1EF282DBB649 /* LibraryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHome.swift; sourceTree = "<group>"; };
 		C599A73CDEC0701E05C01FD8 /* LibraryComposers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryComposers.swift; sourceTree = "<group>"; };
+		C7675B258ADECB248ABA44E3 /* AppleRemindersConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRemindersConnector.swift; sourceTree = "<group>"; };
 		C77FBA74A7B98631C14B45A4 /* TalkToReGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToReGlassView.swift; sourceTree = "<group>"; };
 		CAB2E5DB6E5EB299995AD4B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CC6243D27BD64EE9381C18DE /* ReminderSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSpeech.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 				2C01216EEBD6CAEC798F9EEF /* ConnectorRegistry.swift */,
 				305195FE88383C2EE0999F8A /* ConnectorsView.swift */,
 				5AAC174928F691DE548B2EA4 /* Alarms */,
+				C8A13FDB5DDE00DA9318EFD0 /* AppleReminders */,
 				A3BFF70CF9439F6188BBCCA2 /* Calendar */,
 				3C2BA921F1807D61794D21E8 /* Lists */,
 				1169DC2A8DCCD602AA080D19 /* Music */,
@@ -608,6 +613,15 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		C8A13FDB5DDE00DA9318EFD0 /* AppleReminders */ = {
+			isa = PBXGroup;
+			children = (
+				C7675B258ADECB248ABA44E3 /* AppleRemindersConnector.swift */,
+				75AC48FC58E0E9E2DA12ABB5 /* AppleRemindersTools.swift */,
+			);
+			path = AppleReminders;
+			sourceTree = "<group>";
+		};
 		C9F4AE0674C96B8BAEB3B2BE /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +812,8 @@
 				F02C87E769726F890222CDEF /* AlarmsConnector.swift in Sources */,
 				B5D44EE08E050AEA7AD99118 /* AlarmsSettingsView.swift in Sources */,
 				3B28DA2E801EBE3DCF5E37A3 /* AppLifecycle.swift in Sources */,
+				3A91445AA8E7D3A86420E38A /* AppleRemindersConnector.swift in Sources */,
+				D792D20FBFC83E9A9107C450 /* AppleRemindersTools.swift in Sources */,
 				52D4AAAD156352CE1E86441E /* AppleWeatherSource.swift in Sources */,
 				94034EB0580B212A2D91BAD2 /* AssistantAudio.swift in Sources */,
 				80DA37F3DE7D30B20F677C2D /* AssistantComponents.swift in Sources */,

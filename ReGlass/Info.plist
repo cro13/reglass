@@ -36,6 +36,8 @@
 	<string>ReGlass uses your location for local weather when you ask through your glasses.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>In the interpreter's Real time mode, ReGlass listens with your iPhone's microphone so it can translate the conversation while it talks.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>ReGlass adds, reads and ticks off reminders in the Reminders app when you ask through your glasses.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>ReGlass turns what you say to your glasses into text on this iPhone, so the assistant can answer.</string>
 	<key>NSSupportsLiveActivities</key>
